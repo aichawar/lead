@@ -1,0 +1,393 @@
+@font-face {
+  font-family: 'rustica';
+  src: url('fonts/rustica_black_italic-webfont.woff2') format('woff2'),
+  url('fonts/rustica_black_italic-webfont.woff') format('woff'),
+  url('fonts/rustica_black_italic-webfont.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'rustica';
+  src: url('fonts/rustica_black-webfont.woff2') format('woff2'),
+  url('fonts/rustica_black-webfont.woff') format('woff'),
+  url('fonts/rustica_black-webfont.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'rustica';
+  src: url('fonts/rustica_bold_italic-webfont.woff2') format('woff2'),
+  url('fonts/rustica_bold_italic-webfont.woff') format('woff'),
+  url('fonts/rustica_bold_italic-webfont.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'rustica';
+  src: url('fonts/rustica_bold-webfont.woff2') format('woff2'),
+  url('fonts/rustica_bold-webfont.woff') format('woff'),
+  url('fonts/rustica_bold-webfont.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'rustica';
+  src: url('fonts/rustica_extra_bold_italic-webfont.woff2') format('woff2'),
+  url('fonts/rustica_extra_bold_italic-webfont.woff') format('woff'),
+  url('fonts/rustica_extra_bold_italic-webfont.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'rustica';
+  src: url('fonts/rustica_extra_bold-webfont.woff2') format('woff2'),
+  url('fonts/rustica_extra_bold-webfont.woff') format('woff'),
+  url('fonts/rustica_extra_bold-webfont.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'rustica';
+  src: url('fonts/rustica_extra_light_italic-webfont.woff2') format('woff2'),
+  url('fonts/rustica_extra_light_italic-webfont.woff') format('woff'),
+  url('fonts/rustica_extra_light_italic-webfont.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'rustica';
+  src: url('fonts/rustica_extra_light-webfont.woff2') format('woff2'),
+  url('fonts/rustica_extra_light-webfont.woff') format('woff'),
+  url('fonts/rustica_extra_light-webfont.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'rustica';
+  src: url('fonts/rustica_light_italic-webfont.woff2') format('woff2'),
+  url('fonts/rustica_light_italic-webfont.woff') format('woff'),
+  url('fonts/rustica_light_italic-webfont.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'rustica';
+  src: url('fonts/rustica_light-webfont.woff2') format('woff2'),
+  url('fonts/rustica_light-webfont.woff') format('woff'),
+  url('fonts/rustica_light-webfont.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'rustica';
+  src: url('fonts/rustica_medium-webfont.woff2') format('woff2'),
+  url('fonts/rustica_medium-webfont.woff') format('woff'),
+  url('fonts/rustica_medium-webfont.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'rustica';
+  src: url('fonts/rustica_medium_italic-webfont.woff2') format('woff2'),
+  url('fonts/rustica_medium_italic-webfont.woff') format('woff'),
+  url('fonts/rustica_medium_italic-webfont.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+
+}
+
+
+@font-face {
+  font-family: 'rustica';
+  src: url('fonts/rustica_regular_italic-webfont.woff2') format('woff2'),
+  url('fonts/rustica_regular_italic-webfont.woff') format('woff'),
+  url('fonts/rustica_regular_italic-webfont.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'rustica';
+  src: url('fonts/rustica_regular-webfont.woff2') format('woff2'),
+  url('fonts/rustica_regular-webfont.woff') format('woff'),
+  url('fonts/rustica_regular-webfont.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'rustica';
+  src: url('fonts/rustica_semi_light_italic-webfont.woff2') format('woff2'),
+  url('fonts/rustica_semi_light_italic-webfont.woff') format('woff'),
+  url('fonts/rustica_semi_light_italic-webfont.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'rustica';
+  src: url('fonts/rustica_semi_light-webfont.woff2') format('woff2'),
+  url('fonts/rustica_semi_light-webfont.woff') format('woff'),
+  url('fonts/rustica_semi_light-webfont.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'rustica';
+  src: url('fonts/rustica_thin_italic-webfont.woff2') format('woff2'),
+  url('fonts/rustica_thin_italic-webfont.woff') format('woff'),
+  url('fonts/rustica_thin_italic-webfont.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'rustica';
+  src: url('fonts/rustica_thin-webfont.woff2') format('woff2'),
+  url('fonts/rustica_thin-webfont.woff') format('woff'),
+  url('fonts/rustica_thin-webfont.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+
+}
+
+
+
+@font-face {
+  font-family: 'termina_test_black';
+  src: url('fonts/terminatest-black-webfont.woff2') format('woff2'),
+  url('fonts/terminatest-black-webfont.woff') format('woff'),
+  url('fonts/terminatest-black-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'termina_test_bold';
+  src: url('fonts/terminatest-bold-webfont.woff2') format('woff2'),
+  url('fonts/terminatest-bold-webfont.woff') format('woff'),
+  url('fonts/terminatest-bold-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'termina-bold';
+  src: url('fonts/termina_w05_bold-webfont.woff2') format('woff2'),
+  url('fonts/termina_w05_bold-webfont.woff') format('woff'),
+  url('fonts/termina_w05_bold-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'termina-demi';
+  src: url('fonts/termina_w00_demi-webfont.woff2') format('woff2'),
+  url('fonts/termina_w00_demi-webfont.woff') format('woff'),
+  url('fonts/termina_w00_demi-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'termina-black';
+  src: url('fonts/termina_w05_black-webfont.woff2') format('woff2'),
+  url('fonts/termina_w05_black-webfont.woff') format('woff'),
+  url('fonts/termina_w05_black-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'termina-heavy';
+  src: url('fonts/termina_w05_heavy-webfont.woff2') format('woff2'),
+  url('fonts/termina_w05_heavy-webfont.woff') format('woff'),
+  url('fonts/termina_w05_heavy-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'termina_test_demi';
+  src: url('fonts/terminatest-demi-webfont.woff2') format('woff2'),
+  url('fonts/terminatest-demi-webfont.woff') format('woff'),
+  url('fonts/terminatest-demi-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'termina_test_extra_light';
+  src: url('fonts/terminatest-extralight-webfont.woff2') format('woff2'),
+  url('fonts/terminatest-extralight-webfont.woff') format('woff'),
+  url('fonts/terminatest-extralight-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'termina_test_heavy';
+  src: url('fonts/terminatest-heavy-webfont.woff2') format('woff2'),
+  url('fonts/terminatest-heavy-webfont.woff') format('woff'),
+  url('fonts/terminatest-heavy-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'termina_test_light';
+  src: url('fonts/terminatest-light-webfont.woff2') format('woff2'),
+  url('fonts/terminatest-light-webfont.woff') format('woff'),
+  url('fonts/terminatest-light-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'termina_test_medium';
+  src: url('fonts/terminatest-medium-webfont.woff2') format('woff2'),
+  url('fonts/terminatest-medium-webfont.woff') format('woff'),
+  url('fonts/terminatest-medium-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'termina_test_regular';
+  src: url('fonts/terminatest-regular-webfont.woff2') format('woff2'),
+  url('fonts/terminatest-regular-webfont.woff') format('woff'),
+  url('fonts/terminatest-regular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'termina_test_thin';
+  src: url('fonts/terminatest-thin-webfont.woff2') format('woff2'),
+  url('fonts/terminatest-thin-webfont.woff') format('woff'),
+  url('fonts/terminatest-thin-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+
+}

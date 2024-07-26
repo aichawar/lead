@@ -1,0 +1,4 @@
+[11-Jun-2024 09:30:06 Europe/Paris] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/leadacti/public_html/wp-content/themes/leadactiv/index.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/leadacti/public_html/wp-content/themes/leadactiv/index.php on line 8

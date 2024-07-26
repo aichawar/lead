@@ -1,0 +1,135 @@
+{
+    "key": "group_64a52fac35b7b",
+    "title": "En-tête de la page l'agence",
+    "fields": [
+        {
+            "key": "field_64a52fac0138c",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<img src=\"https:\/\/leadactiv.test.genesii\/wp-content\/uploads\/2023\/07\/header-agence.png\" width=196 \/>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_64a5303ec8eb6",
+            "label": "Mention au dessus du titre",
+            "name": "mention_dessus",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Apparaitra sous forme d'étiquette au dessus du slogan (laisser vide pour ne pas afficher)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64a5309ec8eb8",
+            "label": "Mention en dessous du slogan",
+            "name": "mention_dessous",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Mettez en gras le texte que vous souhaitez voir apparaitre en violet",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_64a53041c8eb7",
+            "label": "Titre",
+            "name": "titre",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Titre apparaissant en grand. Mettez en gras le texte que vous souhaitez voir apparaitre en violet",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_668fa86efa85e",
+            "label": "image",
+            "name": "image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "wp-content\/plugins\/leadactiv-theme\/\/templates\/page-page-agence.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "categories",
+        "tags"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1720690812
+}

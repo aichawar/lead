@@ -1,0 +1,110 @@
+{
+    "key": "group_64ba461e0ba83",
+    "title": "En tête de la page blog",
+    "fields": [
+        {
+            "key": "field_64ba461e0cedf",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "<img src=\"https:\/\/leadactiv.test.genesii.fr\/wp-content\/uploads\/2023\/07\/blog-header.png\" width=196 \/>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_64ba461e0cf08",
+            "label": "Titre",
+            "name": "titre",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Titre apparaissant en grand. Mettez en gras le texte que vous souhaitez voir apparaitre en violet",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_64ba461e0cf0e",
+            "label": "Mention au dessus du titre",
+            "name": "mention_titre",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Apparaitra sous forme d'étiquette au dessus du titre (laisser vide pour ne pas afficher)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_64ba461e0cf13",
+            "label": "Mention en dessous du titre",
+            "name": "mention_dessous_titre",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "posts_page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "categories",
+        "tags"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1690465101
+}

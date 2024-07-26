@@ -1,0 +1,11 @@
+<svg id="Picto" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20.231" height="20.199" viewBox="0 0 20.231 20.199">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_61" data-name="Rectangle 61" width="20.231" height="20.199" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="Groupe_54" data-name="Groupe 54" clip-path="url(#clip-path)">
+    <path id="Tracé_1261" data-name="Tracé 1261" d="M10.088,4.625A5.428,5.428,0,1,0,11.038,15.4.708.708,0,0,0,10.792,14a4.014,4.014,0,1,1,2.133-1.114.708.708,0,0,0,1,1,5.428,5.428,0,0,0-3.838-9.266Z" transform="translate(-1.8 -1.785)" fill="#fff"/>
+    <path id="Tracé_1262" data-name="Tracé 1262" d="M20.231,17.613a2.556,2.556,0,0,0-.766-1.831l-3.8-3.808A8.269,8.269,0,1,0,12,15.652l3.8,3.789a2.6,2.6,0,0,0,4.433-1.828Zm-1.771.833h0a1.181,1.181,0,0,1-1.658,0l-3.569-3.561a8.56,8.56,0,0,0,.689-.574.708.708,0,1,0-.966-1.035A6.837,6.837,0,1,1,14.2,11.721c-.007.011-.006.025-.012.036a.7.7,0,0,0,.1.844l4.176,4.186a1.155,1.155,0,0,1-.007,1.661Z" transform="translate(0 0)" fill="#fff"/>
+  </g>
+</svg>
