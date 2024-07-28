@@ -57,7 +57,7 @@ foreach (is_array($group_64b8fb3b67d5f) ? $group_64b8fb3b67d5f : [] as $field) {
                 <?php switch ($bloc['acf_fc_layout']):
 
                     case 'lame_chiffres': ?>
-                        <section class="bg-dark-green">
+                        <section class="bg-dark-green text-white">
                             <div class="container__lg">
                                 <?php echo do_shortcode('[lame-chiffres id=' . get_the_ID() . ']') ?>
                             </div>
