@@ -1,5 +1,6 @@
-<section class="lame--3--cartes pb-5 pt-5 mb-2 mt-5 position-relative bg-dark-green container__xl">
-    <div class="container__lg text-center pb-5 pt-3 pt-md-4 mt-3">
+<section class="lame--3--cartes pb-5 pt-5 mt-5 position-relative container__lg">
+
+    <div class="text-center pb-5 pt-3 pt-md-4 mt-3">
             <?php if($args["etiquette"]) : ?>
                 <h3 class="tag tag-big mb-3 text-white"><?php echo $args["etiquette"]; ?></h3>
             <?php endif; ?>
@@ -35,8 +36,8 @@
                 <a class="btn btn-purple-black mt-4 mb-4" target="<?php echo $args["bouton"]["target"]; ?>" href="<?php echo $args["bouton"]["url"]; ?>"><?php echo $args["bouton"]["title"]; ?></a>
             <?php endif; ?>
         <?php if ($args["cartes"]) : ?>
-            <div class="container__lg">
-                <div class="row g-1 py-5">
+            <div class="lame-3carte-margin">
+                <div class="row g-1 py-4">
                     <?php foreach ($args["cartes"] as $carte) : ?>
                         <div class="col-md-4 d-flex">
                             <div class="lame--3--cartes--carte text-start background-<?php echo $carte["couleur_fond"]; ?>" style="background-image: url('<?php echo $carte["image"]['url']; ?>');">

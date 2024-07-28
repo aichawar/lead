@@ -53,7 +53,7 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <header>
-  <nav class="navbar navbar-expand-lg fixed-top py-2 py-lg-3 container__xl
+  <nav class="navbar navbar-expand-lg fixed-top py-2 py-lg-3 
   <?php
   if (is_front_page()) {
       echo 'navbar-home';
@@ -67,53 +67,53 @@
       echo 'navbar-single';
   }
   ?>">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="<?php echo home_url('/') ?>">
-        <img class="w-100 logo
-        <?php
-        if (!is_front_page()) {
-            echo 'logo-dark';
-        }
-        ?>" src="<?php echo get_field('logo_blanc', 'option')['url'] ?>" alt="">
-      </a>
-      <button class="navbar-toggler collapsed burger border-0 shadow-none" type="button"
-        data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="span-1"></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="navbar-collapse collapse" id="navbarCollapse">
-        <ul id="header" class="navbar-nav me-auto align-items-sm-center pt-1">
-          <li id="menu-item-403" class="btn-menu ms-lg-4 mt-3 mt-lg-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-403">
-            <a href="<?php echo home_url('/notre-methode/'); ?>">Notre méthode</a>
-          </li>
-          <li id="menu-item-404" class="btn-menu ms-lg-4 mt-3 mt-lg-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-404">
-            <a href="<?php echo home_url('/lagence/'); ?>">L’agence</a>
-          </li>
-          <li id="menu-item-405" class="btn-menu ms-lg-4 mt-3 mt-lg-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-405">
-            <a href="<?php echo home_url('/etudes-de-cas/'); ?>">Études de cas</a>
-          </li>
-          <li id="menu-item-406" class="btn-menu ms-lg-4 mt-3 mt-lg-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-406">
-            <a href="<?php echo home_url('/blog/'); ?>">Blog</a>
-          </li>
-          <li id="menu-item-407" class="btn-menu ms-lg-4 mt-3 mt-lg-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-407">
-            <a href="<?php echo home_url('/contact/'); ?>">Contact</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav ms-auto align-items-sm-center">
-          <li id="menu-item-580" class="btn
+      <div class="container-fluid mx-3">
+        <a class="navbar-brand" href="<?php echo home_url('/') ?>">
+          <img class="w-100 logo
           <?php
-          if (is_front_page()) {
-              echo 'btn-purple-black';
-          } else {
-              echo 'color-btn-dark';
+          if (!is_front_page()) {
+              echo 'logo-dark';
           }
-          ?> ms-lg-3 mt-3 mt-lg-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-580">
-            <a href="<?php echo home_url('/prendre-rendez-vous/'); ?>">Prendre rendez-vous</a>
-          </li>
-        </ul>
+          ?>" src="<?php echo get_field('logo_blanc', 'option')['url'] ?>" alt="">
+        </a>
+        <button class="navbar-toggler collapsed burger border-0 shadow-none" type="button"
+          data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="span-1"></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbarCollapse">
+          <ul id="header" class="navbar-nav me-auto align-items-sm-center pt-1">
+            <li id="menu-item-403" class="btn-menu ms-lg-4 mt-3 mt-lg-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-403">
+              <a href="<?php echo home_url('/notre-methode/'); ?>">Notre méthode</a>
+            </li>
+            <li id="menu-item-404" class="btn-menu ms-lg-4 mt-3 mt-lg-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-404">
+              <a href="<?php echo home_url('/lagence/'); ?>">L’agence</a>
+            </li>
+            <li id="menu-item-405" class="btn-menu ms-lg-4 mt-3 mt-lg-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-405">
+              <a href="<?php echo home_url('/etudes-de-cas/'); ?>">Études de cas</a>
+            </li>
+            <li id="menu-item-406" class="btn-menu ms-lg-4 mt-3 mt-lg-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-406">
+              <a href="<?php echo home_url('/blog/'); ?>">Blog</a>
+            </li>
+            <li id="menu-item-407" class="btn-menu ms-lg-4 mt-3 mt-lg-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-407">
+              <a href="<?php echo home_url('/contact/'); ?>">Contact</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto align-items-sm-center">
+            <li id="menu-item-580" class="btn
+            <?php
+            if (is_front_page()) {
+                echo 'btn-purple-black';
+            } else {
+                echo 'color-btn-dark';
+            }
+            ?> ms-lg-3 mt-3 mt-lg-0 menu-item menu-item-type-post_type menu-item-object-page menu-item-580">
+              <a href="<?php echo home_url('/prendre-rendez-vous/'); ?>">Prendre rendez-vous</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
   </nav>
 </header>

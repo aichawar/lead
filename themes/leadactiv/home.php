@@ -9,7 +9,7 @@ $page_id = get_queried_object_id();
 get_header();
 ?>
 
-<main class="page__blog overflow-hidden container__xl">
+<main class="page__blog overflow-hidden ">
     <section class="page__blog--header content-header position-relative py-1 py-md-2 mt-lg-3 bg-light-gray">
         <div class="container__lg h-100 py-2 py-md-3 my-xl-4" style="padding-left: 80px; padding-right: 80px;">
             <div class="row h-100 align-items-center pt-4 py-lg-2 py-xl-3">
@@ -79,7 +79,7 @@ get_header();
     </section>
 
     <section class="page__blog--content position-relative pb-sm-5">
-        <div class="container__lgposition-relative">
+        <div class="container__lg position-relative">
             <div class="row pt-4 pb-5 page__blog--content--grid grid--actus">
                 <?php if (have_posts()):
                     while (have_posts()):
@@ -89,18 +89,35 @@ get_header();
                                 foreach (get_the_category(get_the_ID()) as $term):
                                     echo $term->slug . ' '; endforeach;
                             } ?>">
-                            <?php echo get_template_part('template-parts/content', 'post'); ?>
+                            <div class="card h-100 p-3 w-100 mx-2">
+                                <div class="card-body d-flex flex-column position-relative">
+                                    <h3 class="f-18 card--title mt-3" style="font-size: 24px;"><?php echo get_the_title(); ?></h3>
+                                    <div class="card--author-date" style="color: #6c757d; margin-top: auto; margin-bottom: 20px; padding-right: 20px;">
+                                        <span class="author"><?php the_author(); ?></span>
+                                        <span class="date"><?php echo get_the_date(); ?></span>
+                                    </div>
+                                </div>
+                                <div class="background-overlay" style="position: absolute; width: 50%; height: 100%; background-size: contain; z-index: -1; background-image: url('/wp-content/uploads/2024/07/SVG-accelerez.png'); margin-top: 20px;"></div>
+                            </div>
                         </div>
                     <?php endwhile; else: ?>
                     <div class="col-12"><?php esc_html_e('Désolé, aucun article ne correspond à vos critères.'); ?></div>
                 <?php endif; ?>
-
-
             </div>
         </div>
     </section>
 
-
+    <div class="cta-section">
+        <h2 class="cta-title">
+            <span class="light-text">Nous prospectons,</span>
+            <br>
+            <strong>vous vendez</strong>
+        </h2>
+        <div class="cta-buttons">
+            <a href="<?php echo home_url('/prendre-rendez-vous/'); ?>" class="btn color-btn-dark">Prendre rendez-vous</a>
+            <a href="<?php echo home_url('/contact/'); ?>" class="btn btn-purple-black">Nous contacter</a>
+        </div>
+    </div>
 </main>
 
 <?php

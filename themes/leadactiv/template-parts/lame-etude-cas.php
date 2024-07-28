@@ -27,8 +27,8 @@ if (array_key_exists("selectionner_toutes_etudes", $lame_etude_cas)) {
 
 ?>
 
-<section class="lame--etude-cas py-3 bg-light ">
-    <div class="container__xl px-5 mx-2 ">
+<section class="lame--etude-cas py-3 ">
+    <div class="container__lg ">
         <div class="text-center">
             <?php if ($lame_etude_cas["etiquette"]): ?>
                 <h3 class="tag mt-4 mb-3 px-2 justify-content-center text-center">
@@ -39,7 +39,8 @@ if (array_key_exists("selectionner_toutes_etudes", $lame_etude_cas)) {
                 <h2 class="pt-1 pb-4 small-title f-36 container__md px-6"><?php echo $lame_etude_cas["titre"] ?></h2>
             <?php endif; ?>
         </div>
-        <div class="row g-1 justify-content-center">
+        <div class="lame-3carte-margin">
+        <div class="row g-1">
             <?php
             if (count($all_etudes) > 0)
                 $etudes = $all_etudes;
@@ -92,6 +93,7 @@ if (array_key_exists("selectionner_toutes_etudes", $lame_etude_cas)) {
                 <?php $count++; ?>
             <?php endforeach; ?>
         </div>
+    </div>
         <div class="text-center">
             <?php if ($lame_etude_cas["lien_etudes_cas"]): ?>
                 <a class="btn color-btn-dark my-5"

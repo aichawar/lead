@@ -6,8 +6,8 @@
 get_header();
 ?>
 
-<main class="page__etude container__xl">
-<section class="page__etude--header content-header position-relative py-1 py-md-2 mt-lg-3 bg-light-gray">
+<main class="page__etude">
+<section class="page__etude--header position-relative py-1 py-md-2 mt-lg-3 bg-light-gray">
         <div class="container__lg  h-100 py-2 py-md-3 my-xl-4">
             <div class="row h-100 align-items-center pt-4 py-lg-2 py-xl-3">
                 <div class="col-12 text-center f-48">
@@ -74,8 +74,8 @@ get_header();
         </div>
     </section>
 
-    <section class="page__etude--content position-relative pb-5" id="decouvrir">
-        <div class="container__lg px-4 pt-4">
+    <section class="container__lg page__etude--content position-relative pb-5" id="decouvrir">
+        <div class=" pt-4">
             <div class="row">
                 <div class="col-xl-12 col-md-11">
                     <?php
@@ -102,7 +102,7 @@ get_header();
         </div>
 
 
-        <div class="container__lg mx-3 position-relative">
+        <div class=" position-relatve justify-content-center">
             <div class="row pt-4 page__etude--content--grid grid--actus">
                 <?php
                 $loop = \Genesii\PostType\EtudeDeCas::findAll(-1);

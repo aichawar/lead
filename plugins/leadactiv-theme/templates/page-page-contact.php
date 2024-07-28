@@ -15,12 +15,12 @@ get_header();
 
 ?>
 
-<main class="page__contact bg-deep-purple container__xl">
+<main class="page__contact ">
     <?php $cpt=0; foreach(is_array($blocs["lames_contenu"]) ? $blocs["lames_contenu"] : [] as $bloc): $cpt++;?>
         <?php switch ($bloc['acf_fc_layout']):
 
             case 'lame_formulaire': ?>
-            <section class="page__contact--formulaire py-4 py-md-5">
+            <section class="page__contact--formulaire py-4 py-md-5 bg-deep-purple">
                 <div class="container__lg h-100 py-4 py-md-5 px-6">
                     <div class="row align-items-start h-100 py-lg-4 px-5">
                         <div class="col-md-6 position-relative">
@@ -69,7 +69,9 @@ get_header();
                 <?php break; ?>
 
             <?php case 'lame_3_cartes': ?>
-                <?php get_template_part('template-parts/lame', '3-cartes', $bloc) ?>
+                <section class="bg-dark-green">
+                    <?php get_template_part('template-parts/lame', '3-cartes', $bloc) ?>
+                </section>
                 <?php break; ?>
 
             <?php case 'lame_reseaux_sociaux': ?>

@@ -15,7 +15,7 @@ foreach ($fields as $bloc){
 }
 ?>
 
-<div class="<?php echo ($display == "light") ? "container__md" : "container__lg"; ?> py-4 py-md-5">
+<div class="<?php echo ($display == "light") ? "container__md" : "container__xl"; ?> py-4 py-md-5">
     <div class="row justify-content-center align-items-center">
         <?php 
         $count = count(is_array($lame_chiffres["chiffres"]) ? $lame_chiffres["chiffres"] : []);

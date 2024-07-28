@@ -8,7 +8,7 @@
 get_header();
 $displayMore = false;
 ?>
-<main class="page__single container__xl">
+<main class="page__single ">
     <!-- Header Section -->
     <section class="py-4 py-sm-5 px-4 position-relative overflow-hidden page__single--header pt-5">
         <div class="container__lg mt-2 pt-5">
@@ -40,8 +40,8 @@ $displayMore = false;
 
     <!-- Content Section -->
     <section class="py-4 py-sm-5 position-relative overflow-hidden">
-        <div class="page__single--body-container">
-            <div class="page__single--body container__lg px-2 pb-4 pb-md-5">
+        <div class="container__lg">
+            <div class="page__single--body  px-2 pb-4 pb-md-5">
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="page__single--body--right ms-auto position-sticky" style="top: -5px;">

@@ -20,34 +20,23 @@ foreach (is_array($group_64b8fb2d1d0bc) ? $group_64b8fb2d1d0bc : [] as $field) {
     if (trim($field['name']) != '')
         $blocs[$field['name']] = get_field($field['key']);
 }
-
-$count_total_lame_50 = 0;
-$count_lame_50 = 0;
-
-foreach (is_array($blocs["lames_contenu"]) ? $blocs["lames_contenu"] : [] as $bloc) {
-    if ($bloc["acf_fc_layout"] == "lame_50_image_50_texte") {
-        $count_total_lame_50++;
-    }
-}
-
 ?>
 
-<main class="page__home container__xl">
-    <section class=" container__lg headerposition-relative bg-dark-green d-flex align-items-center">
-        <div class="h100">
-            <div class="row align-items-center pt-2">
-                <div div class="col-md-10">
+<main class="page__home ">
+    <section class="page__home--header position-relative bg-dark-green d-flex align-items-center overflow-hidden">
+        <div class="container__xl">
+            <div class="row align-items-center py-5 pt-2 mx-5 h-100">
+                <div class="col-md-8">
                     <?php if ($entete["mention_dessus_slogan"]): ?>
-                        <p class="tag text-white my-3"><?php echo $entete["mention_dessus_slogan"] ?></>
-                        <?php endif; ?>
-                        <?php if ($entete["slogan"]): ?>
+                        <p class="tag text-white my-3"><?php echo $entete["mention_dessus_slogan"] ?></p>
+                    <?php endif; ?>
+                    <?php if ($entete["slogan"]): ?>
                         <h1 class="title-big-home mb-3 position-relative text-white ">
                             <?php echo $entete["slogan"] ?>
                         </h1>
                     <?php endif; ?>
                     <?php if ($entete["mention_dessous_violette"] || $entete["mention_dessous_noire"]): ?>
                         <p class="my-3 text-white">
-
                             <?php if ($entete["mention_dessous_violette"]): ?>
                                 <span class="typedjs fw-medium"
                                     data-phrase="<?php $cpt = 0;
@@ -55,45 +44,41 @@ foreach (is_array($blocs["lames_contenu"]) ? $blocs["lames_contenu"] : [] as $bl
                                         echo $mention["mention"];
                                         echo ($cpt != count($entete["mention_dessous_violette"])) ? ';;' : ''; ?><?php $cpt++; endforeach; ?>"></span>
                             <?php endif; ?>
-
                             <?php if ($entete["mention_dessous_noire"]): ?>
                                 <?php echo $entete["mention_dessous_noire"]; ?>
                             <?php endif; ?>
                         </p>
                     <?php endif; ?>
-
                     <?php if ($entete["lien"]): ?>
                         <a class="btn btn-purple-black" target="<?php echo $entete["lien"]["target"] ?>"
                             href="<?php echo $entete["lien"]["url"] ?>"><?php echo $entete["lien"]["title"] ?></a>
                     <?php endif; ?>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-4 d-flex justify-content-end position-relative ">
+                    <img src=".\wp-content\uploads\2024\07\3-Fleche_violet.svg" alt="Image"
+                        class="img-fluid position-absolute bottom-right image__page--home">
                 </div>
             </div>
         </div>
-        <div class="container__md"></div>
-        <div class="col-md-6 align-items-bottom">
-            <img src=".\wp-content\uploads\2024\07\3-Fleche_violet.svg" alt="Image" class="">
-        </div>
     </section>
 
-    <?php $cpt = 0;
+    <?php
+    $cpt = 0;
     foreach (is_array($blocs["lames_contenu"]) ? $blocs["lames_contenu"] : [] as $bloc):
-        $cpt++; ?>
-        <?php switch ($bloc['acf_fc_layout']):
-
+        $cpt++;
+        switch ($bloc['acf_fc_layout']):
             case 'lame_chiffres': ?>
                 <section class="page__home--chiffres bg-light-purple text-black">
                     <?php echo do_shortcode('[lame-chiffres id=' . get_the_ID() . ']') ?>
                 </section>
                 <?php break; ?>
             <?php case 'lame_methode': ?>
-                <section class="page__home--methode my-5 py-4" id="decouvrir">
-                    <div class="container__lg pt-5 pb-5 ">
-                        <div class="row">
+                <section class="page__home--methode" id="decouvrir">
+                    <div class="container__lg">
+                        <div class="row align-items-center">
                             <div class="col-md-8">
                                 <?php if ($bloc["etiquette"]): ?>
-                                    <h3 class="tag text-method--page my-3"><?php echo $bloc["etiquette"] ?></h3>
+                                    <h3 class="tag text-method--page my-3 "><?php echo $bloc["etiquette"] ?></h3>
                                 <?php endif; ?>
 
                                 <?php if ($bloc["titre"]): ?>
@@ -111,12 +96,13 @@ foreach (is_array($blocs["lames_contenu"]) ? $blocs["lames_contenu"] : [] as $bl
                                 <div class="row g-4">
                                     <?php $cpt = 0 ?>
                                     <?php foreach (is_array($bloc["cartes"]) ? $bloc["cartes"] : [] as $carte): ?>
-                                        <div class="col-12 mb-2">
-                                            <div class="page__home--methode--bottom--carte carte-<?php echo $cpt % 2 ?> p-4 mx-5">
+                                        <div class="">
+                                            <div class="page__home--methode--bottom--carte carte-<?php echo $cpt % 2 ?> p-4">
                                                 <?php if ($carte["categories_cartes"]): ?>
                                                     <h3
                                                         class="tag f-14 mb-4 <?php echo strtolower(str_replace(' ', '-', $carte["categories_cartes"])); ?>">
-                                                        <?php echo $carte["categories_cartes"] ?></h3>
+                                                        <?php echo $carte["categories_cartes"] ?>
+                                                    </h3>
                                                 <?php endif; ?>
                                                 <?php if ($carte["titre_carte"]): ?>
                                                     <p class="f-20 my-1 mb-3"> <?php echo $carte["titre_carte"] ?></p>
@@ -136,54 +122,50 @@ foreach (is_array($blocs["lames_contenu"]) ? $blocs["lames_contenu"] : [] as $bl
                     </div>
                 </section>
                 <?php break; ?>
-
             <?php case 'lame_50_image_50_texte': ?>
-                <?php if ($count_lame_50 == 0): ?>
-                    <section class="page__home--50--50">
-                        <div class="row">
-                            <?php endif; ?>
-                            <div class="container__lg px-5">
-                                <div class="card mb-4 background-<?php echo $bloc["couleur_titre"] ?>">
-                                    <div
-                                        class="row align-items-top <?php echo ($bloc["disposition"] != "gauche") ? "flex-md-row-reverse" : "" ?>">
-                                        <div class="col-md-6 px-5 my-2 text-container">
-                                            <h2 class="title_big"><?php echo $bloc["titre"] ?></h2>
-                                            <?php if ($bloc["contenu_texte"]): ?>
-                                                <p class="f-18"><?php echo $bloc["contenu_texte"] ?></p>
-                                            <?php endif; ?>
-                                        </div>
-                                        <div class="col-md-6 d-flex ">
-                                            <figure class="image-background">
-                                                <img src="<?php echo $bloc["image"]["url"] ?>" alt="<?php echo $bloc["image"]["alt"] ?>"
-                                                    class="">
-                                            </figure>
-                                        </div>
-                                    </div>
+                <section class="lame_50_image_50_texte">
+                    <div class="container__lg"> 
+                        <div class="card-wrapper">                      
+                        <div class="card background-<?php echo $bloc["couleur_titre"] ?>">
+                            <div
+                                class="row align-items-top <?php echo ($bloc["disposition"] != "gauche") ? "flex-md-row-reverse" : "" ?>">
+                                <div class="col-md-6 px-5 text-container">
+                                    <h2 class="title_big f-36"><?php echo $bloc["titre"] ?></h2>
+                                    <?php if ($bloc["contenu_texte"]): ?>
+                                        <p class="f-18"><?php echo $bloc["contenu_texte"] ?></p>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="col-md-6 d-flex ">
+                                    <figure class="">
+                                        <img src="<?php echo $bloc["image"]["url"] ?>" alt="<?php echo $bloc["image"]["alt"] ?>"
+                                            class="image-background">
+                                    </figure>
                                 </div>
                             </div>
-                            <?php if ($count_lame_50 == $count_total_lame_50): ?>
                         </div>
-                    </section>
-                <?php endif; ?>
-                <?php $count_lame_50++; ?>
-                <?php break; ?>
-
-
-
+                    </div>
+                    
+                </section>
+             
+            <?php break; ?>
+            
             <?php case 'lame_etudes_cas': ?>
-                <?php echo get_template_part('template-parts/lame', 'etude-cas', ['bloc' => $bloc]) ?>
+                <section class="bg-light-gray justify-content-center">
+                    <?php echo get_template_part('template-parts/lame', 'etude-cas', ['bloc' => $bloc]) ?>
+                </section>
                 <?php break; ?>
-
             <?php case 'lame_partenaires': ?>
-                <?php echo get_template_part('template-parts/lame', 'partenaires', $bloc) ?>
+                <section>
+                    <?php echo get_template_part('template-parts/lame', 'partenaires', $bloc) ?>
+                </section>
                 <?php break; ?>
-
             <?php case 'lame_3_cartes': ?>
+                <section class="bg-dark-green">
                     <?php get_template_part('template-parts/lame', '3-cartes', $bloc) ?>
+                </section>
                 <?php break; ?>
-
             <?php case 'lame_faq': ?>
-                <div class="container-xl px-5">
+                <section class="container__lg">
                     <div class="faq-section">
                         <div class="row">
                             <div class=" col-2 col-md-3 pe-5">
@@ -221,13 +203,10 @@ foreach (is_array($blocs["lames_contenu"]) ? $blocs["lames_contenu"] : [] as $bl
                                 <?php endif; ?>
                             </div>
                         </div>
-
                     </div>
-                </div>
+                </section>
                 <?php break; ?>
-
-        <?php endswitch ?>
-
+        <?php endswitch; ?>
     <?php endforeach; ?>
     <div class="cta-section">
         <h2 class="cta-title">
@@ -241,10 +220,7 @@ foreach (is_array($blocs["lames_contenu"]) ? $blocs["lames_contenu"] : [] as $bl
             <a href="<?php echo home_url('/contact/'); ?>" class="btn btn-purple-black">Nous contacter</a>
         </div>
     </div>
-
-
 </main>
 
 <?php the_content(); ?>
-<?php
-get_footer();
+<?php get_footer(); ?>
