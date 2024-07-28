@@ -677,145 +677,6 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_64bf97af24615": {
-                    "key": "layout_64bf97af24615",
-                    "name": "lame_chiffres",
-                    "label": "Lame chiffres",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_64bf97796a4e3",
-                            "label": "",
-                            "name": "",
-                            "aria-label": "",
-                            "type": "message",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "<img src=\"http:\/\/leadactiv-v1.local\/wp-content\/uploads\/2023\/07\/Capture-decran-2023-07-25-a-11.22.11.png\" width=196 \/>",
-                            "new_lines": "wpautop",
-                            "esc_html": 0
-                        },
-                        {
-                            "key": "field_64bf9adc9ba4c",
-                            "label": "Titre",
-                            "name": "titre",
-                            "aria-label": "",
-                            "type": "wysiwyg",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "tabs": "visual",
-                            "toolbar": "basic",
-                            "media_upload": 0,
-                            "delay": 0
-                        },
-                        {
-                            "key": "field_64bf97796a4e4",
-                            "label": "Chiffres",
-                            "name": "chiffres",
-                            "aria-label": "",
-                            "type": "repeater",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "layout": "table",
-                            "min": 0,
-                            "max": 3,
-                            "collapsed": "",
-                            "button_label": "Ajouter un chiffre",
-                            "rows_per_page": 20,
-                            "sub_fields": [
-                                {
-                                    "key": "field_64bf97796a4e5",
-                                    "label": "Illustration",
-                                    "name": "illustration",
-                                    "aria-label": "",
-                                    "type": "image",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "array",
-                                    "library": "all",
-                                    "min_width": "",
-                                    "min_height": "",
-                                    "min_size": "",
-                                    "max_width": "",
-                                    "max_height": "",
-                                    "max_size": "",
-                                    "mime_types": "",
-                                    "preview_size": "medium",
-                                    "parent_repeater": "field_64bf97796a4e4"
-                                },
-                                {
-                                    "key": "field_64bf97796a4e6",
-                                    "label": "Chiffre",
-                                    "name": "chiffre",
-                                    "aria-label": "",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 1,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "parent_repeater": "field_64bf97796a4e4"
-                                },
-                                {
-                                    "key": "field_64bf97796a4e7",
-                                    "label": "Légende",
-                                    "name": "legende",
-                                    "aria-label": "",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "maxlength": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "parent_repeater": "field_64bf97796a4e4"
-                                }
-                            ]
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
                 "layout_64bf9881cf249": {
                     "key": "layout_64bf9881cf249",
                     "name": "lame_etudes_cas",
@@ -958,6 +819,145 @@
                                 "id": ""
                             },
                             "return_format": "array"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_64bf97af24615": {
+                    "key": "layout_64bf97af24615",
+                    "name": "lame_chiffres",
+                    "label": "Lame chiffres",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_64bf97796a4e3",
+                            "label": "",
+                            "name": "",
+                            "aria-label": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "<img src=\"http:\/\/leadactiv-v1.local\/wp-content\/uploads\/2023\/07\/Capture-decran-2023-07-25-a-11.22.11.png\" width=196 \/>",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        },
+                        {
+                            "key": "field_64bf9adc9ba4c",
+                            "label": "Titre",
+                            "name": "titre",
+                            "aria-label": "",
+                            "type": "wysiwyg",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "visual",
+                            "toolbar": "basic",
+                            "media_upload": 0,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_64bf97796a4e4",
+                            "label": "Chiffres",
+                            "name": "chiffres",
+                            "aria-label": "",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "table",
+                            "min": 0,
+                            "max": 3,
+                            "collapsed": "",
+                            "button_label": "Ajouter un chiffre",
+                            "rows_per_page": 20,
+                            "sub_fields": [
+                                {
+                                    "key": "field_64bf97796a4e5",
+                                    "label": "Illustration",
+                                    "name": "illustration",
+                                    "aria-label": "",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": "",
+                                    "preview_size": "medium",
+                                    "parent_repeater": "field_64bf97796a4e4"
+                                },
+                                {
+                                    "key": "field_64bf97796a4e6",
+                                    "label": "Chiffre",
+                                    "name": "chiffre",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_64bf97796a4e4"
+                                },
+                                {
+                                    "key": "field_64bf97796a4e7",
+                                    "label": "Légende",
+                                    "name": "legende",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_64bf97796a4e4"
+                                }
+                            ]
                         }
                     ],
                     "min": "",
@@ -1370,5 +1370,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1720744051
+    "modified": 1722166338
 }

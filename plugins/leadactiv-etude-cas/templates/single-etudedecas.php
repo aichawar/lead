@@ -3,14 +3,13 @@
  * Single page template pour EtudeDeCas
  */
 get_header();
-
 ?>
 
-<main class="single__etude container__xl">
-    <section class="single__etude--header content-header position-relative bg-white" style="background-image: url('/wp-content/uploads/2024/07/SVG-accelerez.png'); background-size: cover;">
-        <div class="container__lg h-100 py-1 py-md-2 my-xl-2">
-            <div class="row h-100 align-items-center py-lg-4 py-xl-5 my-lg-4 my-xl-5">
-                <div class="col-lg-6 d-flex flex-column align-items-start position-relative single__etude--text-logo">
+<main class="single__etude">
+    <section class="single__etude--header position-relative bg-white">
+        <div class="container__xl">
+            <div class="row align-items-center">
+                <div class="col-md-6 d-flex flex-column align-items-start position-relative h500">
                     <?php
                     $etude_fields = get_fields(get_the_ID());
                     if ($etude_fields["logo_client"]): ?>
@@ -19,28 +18,37 @@ get_header();
                                 alt="<?php echo $etude_fields["logo_client"]["alt"] ?>">
                         </div>
                     <?php endif; ?>
-                    
+
                     <?php if (get_field('phrase_accroche', get_the_ID())): ?>
-                        <h1 class="f-48 mb-4">
+                        <h1 class="f-58 mb-4">
                             <?php echo get_field('phrase_accroche', get_the_ID()); ?>
                         </h1>
                     <?php endif; ?>
-                    
+
                     <?php if (get_field('description', get_the_ID())): ?>
                         <p class="single__etude--header--descr f-20 mb-4">
                             <?php echo get_field('description', get_the_ID()); ?>
-                        </>
-                    <?php endif; ?>
+                            </>
+                        <?php endif; ?>
                 </div>
 
-                <div class="col-lg-6 mt-3 mt-lg-0">
+                <div class="col-md-6 d-flex justify-content-center align-items-center-relative ">
                     <?php if ($media = get_field('media')): ?>
                         <div class="header-media border-radius">
                             <?php if ($media['type_de_media'] == 'YouTube' && $media['url_youtube']): ?>
-                                <iframe width="100%" height="315" src="<?php echo esc_url($media['url_youtube']); ?>"
-                                        frameborder="0" allowfullscreen></iframe>
+                                <div class="video-container">
+                                    <?php if ($media['miniature']): ?>
+                                        <img src="<?php echo esc_url($media['miniature']['url']); ?>"
+                                            alt="<?php echo esc_attr($media['miniature']['alt']); ?>" class="miniature-image">
+                                        <div class="video-overlay"></div>
+                                    <?php else: ?>
+                                        <iframe width="100%" height="100%" src="<?php echo esc_url($media['url_youtube']); ?>"
+                                            frameborder="0" allowfullscreen></iframe>
+                                    <?php endif; ?>
+                                </div>
                             <?php elseif ($media['type_de_media'] == 'Vidéo' && $media['fichier_video']): ?>
-                                <video width="100%" height="315" controls>
+                                <video width="100%" height="100%" controls
+                                    poster="<?php echo esc_url($media['miniature']['url']); ?>">
                                     <source src="<?php echo esc_url($media['fichier_video']['url']); ?>" type="video/mp4">
                                     Your browser does not support the video tag.
                                 </video>
@@ -50,15 +58,18 @@ get_header();
                             <?php endif; ?>
                         </div>
                     <?php endif; ?>
+                    <img src="/wp-content/uploads/2024/07/SVG-accelerez.png" alt="Image"
+                        class="img-fluid position-absolute background-image-left">
                 </div>
             </div>
         </div>
     </section>
 
+
+
     <section class="single__etude--body" id="decouvrir">
         <?php foreach (is_array(get_field('lames_contenu', get_the_ID())) ? get_field('lames_contenu', get_the_ID()) : [] as $bloc): ?>
             <?php switch ($bloc['acf_fc_layout']):
-
                 case 'lame_chiffres': ?>
                     <section class="page__home--chiffres bg-light-purple py-5">
                         <?php if ($bloc['titre']): ?>
@@ -71,55 +82,58 @@ get_header();
                     <?php break; ?>
 
                 <?php case 'lame_listes_texte': ?>
-                    <section class="page__home--50--50 pb-3 py-4 py-md-5 position-relative d-flex align-items-center overflow-hidden bg-light-purple">
-    <div class="container__lg ">
-        <div class="row align-items-center px-3">
-            <div class="col-md-6 mb-4 mb-md-0 z-1 justify-content-left ">
-                <?php if (!empty($bloc["titre"])): ?>
-                    <h3 class="f-56 position-relative mb-4"><?php echo $bloc["titre"] ?></h3>
-                <?php endif; ?>
-                <?php if (!empty($bloc["texte"])): ?>
-                    <div class="f-16 content-text mb-4"><?php echo $bloc["texte"] ?></div>
-                <?php endif; ?>
-                <?php if (!empty($bloc["bouton"])): ?>
-                    <a class="btn color-btn-dark px-5" href="<?php echo $bloc["bouton"]['url'] ?>" target="<?php echo $bloc["bouton"]['target'] ?>"><?php echo $bloc["bouton"]['title'] ?></a>
-                <?php endif; ?>
-            </div>
-            <div class="col-md-6 d-flex justify-content-center pe-md-5 position-relative">
-                <?php if (!empty($bloc["liste"])): ?>
-                    <div class="me-lg-5 w-100 position-relative">
-                        <div class="card no-hover w-75 py-5 px-4 z-1">
-                            <?php if (!empty($bloc["titre_liste"])): ?>
-                                <h4 class=" tag tag-gray f-18 w-50 justify-content-left"><?php echo $bloc["titre_liste"] ?></h4>
-                            <?php endif; ?>
-                            <div class="content-text">
-                                <ul class="p-0 m-0 list-unstyled">
-                                    <?php foreach ($bloc["liste"] as $item): ?>
-                                        <li class="picto-style mb-3 d-flex align-items-center">
-                                            <?php if (!empty($item['picto_item'])): ?>
-                                                <img src="<?php echo $item['picto_item']['url'] ?>" class="me-2">
+                    <section class="lame_listes_texte position-relative d-flex align-items-center overflow-hidden bg-light-purple">
+                        <div class="container__lg">
+                            <div class="row align-items-top">
+                                <div class="col-md-6 justify-content-left">
+                                    <div class="lame_listes_texte__content">
+                                        <?php if (!empty($bloc["titre"])): ?>
+                                            <h3 class="f-48"><?php echo $bloc["titre"] ?></h3>
+                                        <?php endif; ?>
+                                        <?php if (!empty($bloc["texte"])): ?>
+                                            <p class="f-16"><?php echo $bloc["texte"] ?></>
                                             <?php endif; ?>
-                                            <?php echo $item['liste_item'] ?>
-                                        </li>
-                                    <?php endforeach; ?>
-                                </ul>
+                                            <?php if (!empty($bloc["bouton"])): ?>
+                                                <a class="btn color-btn-dark px-5" href="<?php echo $bloc["bouton"]['url'] ?>"
+                                                    target="<?php echo $bloc["bouton"]['target'] ?>"><?php echo $bloc["bouton"]['title'] ?></a>
+                                            <?php endif; ?>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 d-flex justify-content-center align-item-center position-relative">
+                                    <?php if (!empty($bloc["liste"])): ?>
+                                        <div class="lame_listes_texte__card-container">
+                                            <div class="lame_listes_texte__card-content">
+                                                <?php if (!empty($bloc["titre_liste"])): ?>
+                                                    <p class="tag tag-green f-14"><?php echo $bloc["titre_liste"] ?></p>
+                                                <?php endif; ?>
+                                                <div class="content-text">
+                                                    <ul class="p-0 m-0 list-unstyled">
+                                                        <?php foreach ($bloc["liste"] as $item): ?>
+                                                            <li class="picto-style  d-flex align-items-center">
+                                                                <?php if (!empty($item['picto_item'])): ?>
+                                                                    <img src="<?php echo $item['picto_item']['url'] ?>" class="me-5">
+                                                                <?php endif; ?>
+                                                                <?php echo $item['liste_item'] ?>
+                                                            </li>
+                                                        <?php endforeach; ?>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-</section>
-
-
+                    </section>
                     <?php break; ?>
+
+
 
                 <?php case 'lame_texte_image': ?>
                     <section
                         class="lame--texte_image pb-3 py-4 py-md-5 position-relative d-flex align-items-center justify-content-center overflow-hidden bg-white">
                         <div class="py-4 py-md-5 w-100">
-                            <div class="container__lgtext-center">
+                            <div class="container__lg text-center">
                                 <?php if (!empty($bloc["titre_lame"])): ?>
                                     <h3 class="title-big position-relative mb-4"><?php echo $bloc["titre_lame"] ?></h3>
                                 <?php endif; ?>
@@ -219,12 +233,13 @@ get_header();
                 <?php case 'lame_temoignage_video': ?>
                     <section
                         class="single__etude--temoignage pb-3 py-4 py-md-5 position-relative d-flex align-items-center overflow-hidden">
-                        <div class="container__lgpy-4 py-md-5">
+                        <div class="container__lg py-4 py-md-5">
                             <div class="row align-items-center py-lg-4 py-xl-5">
                                 <div class="col-12 ">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            <div class="single__etude--temoignage--left  p-4 p-lg-5 h-100 d-flex align-items-center justify-content-center">
+                                            <div
+                                                class="single__etude--temoignage--left  p-4 p-lg-5 h-100 d-flex align-items-center justify-content-center">
                                                 <?php if ($bloc["photo"]): ?>
                                                     <figure class="mb-0">
                                                         <img src="<?php echo $bloc["photo"]['url'] ?>" class="img-fluid" />
@@ -255,8 +270,7 @@ get_header();
                                                     </div>
                                                 <?php endif; ?>
                                                 <?php if ($bloc["citation"]): ?>
-                                                    <div
-                                                        class="single__etude--temoignage--right--citation  f-14 rustica mb-0">
+                                                    <div class="single__etude--temoignage--right--citation  f-14 rustica mb-0">
                                                         <?php echo $bloc["citation"] ?>
                                                     </div>
                                                 <?php endif; ?>
@@ -270,8 +284,6 @@ get_header();
                     <?php break; ?>
 
             <?php endswitch ?>
-
-
         <?php endforeach; ?>
     </section>
     <div class="cta-section">
@@ -287,7 +299,3 @@ get_header();
         </div>
     </div>
 </main>
-
-<?php
-get_footer();
-?>
