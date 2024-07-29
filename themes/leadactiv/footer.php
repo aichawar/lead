@@ -6,7 +6,7 @@ $page_id = get_queried_object_id();
 <?php wp_footer(); ?>
 
 <footer class="footer bg-darck-green">
-    <div class="container__xl">
+    <div class="container__lg">
         <section class="footer-main ">
             <div class=" text-white">
                 <div class="row">

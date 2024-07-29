@@ -9,9 +9,9 @@ $page_id = get_queried_object_id();
 get_header();
 ?>
 
-<section class="page__blog--header position-relative py-1 my-md-2 mt-lg-3 bg-light-gray">
+<section class="page__blog--header position-relative py-5 bg-light-gray">
     <div class="container__xl">
-        <div class="col-12 text-center f-48 pt-4 mt-5">
+        <div class="col-12 text-center f-48 pt-4">
             <h2 class="big-title f-48 mt-3 text-darck-green"><?php _e('Le blog leadactiv') ?></h2>
         </div>
         <div class="col-12">
