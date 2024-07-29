@@ -44,29 +44,31 @@ get_header();
             <?php break; ?>
 
             <?php case 'lame_calendly': ?>
-                <section class="page__contact--calendly bg-white position-relative py-4 <?php if($cpt== 1) echo 'mt-lg-5' ?>">
-                    <div class="container__lg d-flex flex-column align-items-center py-1 py-lg-4 my-xl-4 h-100">
-                        <div class="text-center mb-4 px-5">
-                            <?php if($bloc["titre"]) :?>
-                                <h4 class="f-36"><?php echo $bloc["titre"] ?></h4>
-                            <?php endif; ?>
+<section class="page__contact--calendly bg-white position-relative py-4 <?php if($cpt== 1) echo 'mt-lg-5' ?>">
+    <div class="container__lg d-flex flex-column align-items-center py-1 py-lg-4 my-xl-4 h-100">
+        <div class="text-center mb-4 px-5">
+            <?php if($bloc["titre"]) :?>
+                <h4 class="f-36"><?php echo $bloc["titre"] ?></h4>
+            <?php endif; ?>
 
-                            <?php if($bloc["contenu_texte"]) :?>
-                                <div class="pt-3 px-5"><?php echo $bloc["contenu_texte"] ?></div>
-                            <?php endif; ?>
-                        </div>
+            <?php if($bloc["contenu_texte"]) :?>
+                <div class="pt-3 px-5"><?php echo $bloc["contenu_texte"] ?></div>
+            <?php endif; ?>
+        </div>
 
-                        <div class="page__contact--calendly--calendar justify-content-center">
-                            <div class="calendly-inline-widget"
-                                data-url="<?php echo $bloc["calendly"]; ?>"
-                                style="width:1280px;height:800px;border-radius:58px; overflow: hidden;">
-                                <button class="calendly__popup-btn btn btn-purple-white" onclick="Calendly.initPopupWidget({url: '<?php echo $bloc["calendly"]; ?>'});return false;" type="button">Prendre rendez-vous</button>
-                            </div>
-                            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-                        </div>
-                    </div>
-                </section>
-                <?php break; ?>
+        <div class="page__contact--calendly--calendar justify-content-center">
+            <div class="calendly-inline-widget"
+                data-url="<?php echo $bloc["calendly"]; ?>"
+                style="width:100%;height:667px;overflow: visible;">
+            </div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </div>
+
+        <button class="calendly__popup-btn btn btn-purple-white" onclick="Calendly.initPopupWidget({url: '<?php echo $bloc["calendly"]; ?>'});return false;" type="button">Prendre rendez-vous</button>
+    </div>
+</section>
+<?php break; ?>
+
 
             <?php case 'lame_3_cartes': ?>
                 <section class="bg-dark-green">

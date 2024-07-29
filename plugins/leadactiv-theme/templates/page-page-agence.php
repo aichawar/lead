@@ -28,8 +28,8 @@ foreach (is_array($group_64b8fb3b67d5f) ? $group_64b8fb3b67d5f : [] as $field) {
 <main class="page__agence ">
 <section class="page__home--header page__methode--header--top position-relative bg-light-purple align-items-center overflow-hidden">
     <div class="container__xl">
-        <div class="row align-items-center py-5 pt-5 mx-5 h-100">
-            <div class="col-md-8 pt-5">
+        <div class="row align-items-center pt-5 mx-5 h-100">
+            <div class="col-md-8 pt-5 mt-5">
                 <h2 class=" my-3 f-56 mb-4 pt-5">
                     <?php echo $entete["titre"] ?>
                 </h2>

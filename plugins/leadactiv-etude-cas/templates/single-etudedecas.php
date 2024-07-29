@@ -5,6 +5,7 @@
 get_header();
 ?>
 
+
 <main class="single__etude">
     <section class="single__etude--header position-relative bg-white">
         <div class="container__xl">
@@ -71,206 +72,234 @@ get_header();
         <?php foreach (is_array(get_field('lames_contenu', get_the_ID())) ? get_field('lames_contenu', get_the_ID()) : [] as $bloc): ?>
             <?php switch ($bloc['acf_fc_layout']):
                 case 'lame_chiffres': ?>
-                    <section class="page__home--chiffres bg-light-purple py-5">
-                        <?php if ($bloc['titre']): ?>
-                            <div class="container__lg mb-n2 mb-md-n4 pt-md-4">
-                                <h3 class="text-center f-36 mb-3"><?php echo $bloc['titre']; ?></h3>
+                    <section class="page__etude--chiffres d-flex overflow-hidden justify-content-center">
+            <div class="page__etude--chiffres__left text-white d-flex flex-column py-5">
+                <div class="container__xl">
+                    <?php if ($bloc['photo']): ?>
+                        <img src="<?php echo $bloc['photo']['url']; ?>" alt="<?php echo $bloc['photo']['alt']; ?>" class="mb-4">
+                    <?php endif; ?>
+                    <div>
+                        <?php if ($bloc['nom_prenom'] && $bloc['fonction_entreprise']): ?>
+                            <div class="nom_prenom mb-3">
+                                <span><?php echo strtoupper($bloc['nom_prenom']); ?></span>
+                                <span><?php echo strtoupper($bloc['fonction_entreprise']); ?></span>
                             </div>
                         <?php endif; ?>
-                        <?php echo do_shortcode('[lame-chiffres id=' . get_the_ID() . ' display="light"]') ?>
-                    </section>
-                    <?php break; ?>
+                        <?php if ($bloc['citation']): ?>
+                            <p class="citation mt-4 pb-4"><?php echo $bloc['citation']; ?></p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+            <div class="page__etude--chiffres__spacer"></div>
+            <div class="page__etude--chiffres__right text-center d-flex flex-column justify-content-center py-5">
+                <div class="container__lg align-item-center">
+                    <?php if ($bloc['titre']): ?>
+                        <h3 class="text-center f-40 mb-3"><?php echo $bloc['titre']; ?></h3>
+                    <?php endif; ?>
+                    <div class="py-4 py-md-5 d-flex flex-column align-items-center">
+                        <?php 
+                        $count = count(is_array($bloc['chiffres']) ? $bloc['chiffres'] : []);
+                        $index = 0;
+                        foreach (is_array($bloc['chiffres']) ? $bloc['chiffres'] : [] as $chiffre): ?>
+                            <div class="d-flex flex-column align-items-center text-center mb-4">
+                                <h2 class="page__etude--chiffres--chiffre mb-2"><?php echo $chiffre['chiffre']; ?></h2>
+                                <?php if ($chiffre['legende']): ?>
+                                    <p class="page__etude--chiffres--legend mb-0"><?php echo $chiffre['legende']; ?></p>
+                                <?php endif; ?>
+                            </div>
+                            <?php $index++; ?>
+                        <?php endforeach; ?>
+                    </div>
+                </div>    
+            </div>
+        </section>
+                <?php break; ?>
 
-                <?php case 'lame_listes_texte': ?>
-                    <section class="lame_listes_texte position-relative d-flex align-items-center overflow-hidden bg-light-purple">
-                        <div class="container__lg">
-                            <div class="row align-items-top">
-                                <div class="col-md-6 justify-content-left">
-                                    <div class="lame_listes_texte__content">
-                                        <?php if (!empty($bloc["titre"])): ?>
-                                            <h3 class="f-48"><?php echo $bloc["titre"] ?></h3>
-                                        <?php endif; ?>
-                                        <?php if (!empty($bloc["texte"])): ?>
-                                            <p class="f-16"><?php echo $bloc["texte"] ?></>
+                    <?php case 'lame_listes_texte': ?>
+                        <section class="lame_listes_texte position-relative d-flex align-items-center overflow-hidden bg-light-purple">
+                            <div class="container__lg">
+                                <div class="row align-items-top">
+                                    <div class="col-md-6 justify-content-left">
+                                        <div class="lame_listes_texte__content">
+                                            <?php if (!empty($bloc["titre"])): ?>
+                                                <h3 class="f-48"><?php echo $bloc["titre"] ?></h3>
                                             <?php endif; ?>
-                                            <?php if (!empty($bloc["bouton"])): ?>
-                                                <a class="btn color-btn-dark px-5" href="<?php echo $bloc["bouton"]['url'] ?>"
-                                                    target="<?php echo $bloc["bouton"]['target'] ?>"><?php echo $bloc["bouton"]['title'] ?></a>
-                                            <?php endif; ?>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 d-flex justify-content-center align-item-center position-relative">
-                                    <?php if (!empty($bloc["liste"])): ?>
-                                        <div class="lame_listes_texte__card-container">
-                                            <div class="lame_listes_texte__card-content">
-                                                <?php if (!empty($bloc["titre_liste"])): ?>
-                                                    <p class="tag tag-green f-14"><?php echo $bloc["titre_liste"] ?></p>
+                                            <?php if (!empty($bloc["texte"])): ?>
+                                                <p class="f-16"><?php echo $bloc["texte"] ?></>
                                                 <?php endif; ?>
-                                                <div class="content-text">
-                                                    <ul class="p-0 m-0 list-unstyled">
-                                                        <?php foreach ($bloc["liste"] as $item): ?>
-                                                            <li class="picto-style  d-flex align-items-center">
-                                                                <?php if (!empty($item['picto_item'])): ?>
-                                                                    <img src="<?php echo $item['picto_item']['url'] ?>" class="me-5">
-                                                                <?php endif; ?>
-                                                                <?php echo $item['liste_item'] ?>
-                                                            </li>
-                                                        <?php endforeach; ?>
-                                                    </ul>
+                                                <?php if (!empty($bloc["bouton"])): ?>
+                                                    <a class="btn color-btn-dark px-5" href="<?php echo $bloc["bouton"]['url'] ?>"
+                                                        target="<?php echo $bloc["bouton"]['target'] ?>"><?php echo $bloc["bouton"]['title'] ?></a>
+                                                <?php endif; ?>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex justify-content-center align-item-center position-relative">
+                                        <?php if (!empty($bloc["liste"])): ?>
+                                            <div class="lame_listes_texte__card-container">
+                                                <div class="lame_listes_texte__card-content">
+                                                    <?php if (!empty($bloc["titre_liste"])): ?>
+                                                        <p class="tag tag-green f-14"><?php echo $bloc["titre_liste"] ?></p>
+                                                    <?php endif; ?>
+                                                    <div class="content-text">
+                                                        <ul class="p-0 m-0 list-unstyled">
+                                                            <?php foreach ($bloc["liste"] as $item): ?>
+                                                                <li class="picto-style  d-flex align-items-center">
+                                                                    <?php if (!empty($item['picto_item'])): ?>
+                                                                        <img src="<?php echo $item['picto_item']['url'] ?>" class="me-5">
+                                                                    <?php endif; ?>
+                                                                    <?php echo $item['liste_item'] ?>
+                                                                </li>
+                                                            <?php endforeach; ?>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    <?php endif; ?>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <?php break; ?>
-
-
-
-                <?php case 'lame_texte_image': ?>
-                    <section
-                        class="lame--texte_image pb-3 py-4 py-md-5 position-relative d-flex align-items-center justify-content-center overflow-hidden bg-white">
-                        <div class="py-4 py-md-5 w-100">
-                            <div class="container__lg text-center">
-                                <?php if (!empty($bloc["titre_lame"])): ?>
-                                    <h3 class="title-big position-relative mb-4"><?php echo $bloc["titre_lame"] ?></h3>
-                                <?php endif; ?>
-                            </div>
-
-                            <div class="container__sm text-center pb-4">
-                                <?php if ($bloc["mention_dessous_titre"]): ?>
-                                    <div class="f-14 rustica content-text"><?php echo $bloc["mention_dessous_titre"] ?></div>
-                                <?php endif; ?>
-                            </div>
-
-                            <div class="container__lg pt-0 pt-md-5">
-                                <div class="row justify-content-center">
-                                    <?php $cpt = 0 ?>
-                                    <?php foreach (is_array($bloc["lame_imagetexte"]) ? $bloc["lame_imagetexte"] : [] as $lame): ?>
-                                        <div class="col-md-4 d-flex mb-4">
-                                            <div class="card h200 p-3 w-100 text-center bg-light-purple">
-                                                <?php if ($lame["image"]): ?>
-                                                    <figure class="mb-4">
-                                                        <img src="<?php echo $lame["image"]["url"]; ?>" width="60" height="60"
-                                                            alt="<?php echo $lame["image"]["alt"]; ?>">
-                                                    </figure>
-                                                <?php endif; ?>
-                                                <h4 class="f-18 mb-3"><?php echo $lame["titre"]; ?></h4>
-                                                <?php if ($lame["texte"]): ?>
-                                                    <div class="f-14 rustica content-text"><?php echo $lame["texte"]; ?></div>
-                                                <?php endif; ?>
-                                            </div>
-                                        </div>
-                                        <?php $cpt++ ?>
-                                    <?php endforeach; ?>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <?php break; ?>
-
-
-                <?php case 'lame_texte_image_complexe': ?>
-                    <section class="pb-3 py-4 py-md-5 position-relative overflow-hidden">
-
-                        <div class="page__home--methode--top pt-0 pt-md-4 position-relative text-center">
-                            <div class="container__lg pb-md-4">
-                                <?php if ($bloc["etiquette"]): ?>
-                                    <h3 class="tag tag-big tag-purple my-3"><?php echo $bloc["etiquette"] ?></h3>
-                                <?php endif; ?>
-
-                                <?php if ($bloc["titre"]): ?>
-                                    <h2 class="pt-3 pb-4 "><?php echo $bloc["titre"] ?></h2>
-                                <?php endif; ?>
-
-                                <?php if ($bloc["texte"]): ?>
-                                    <div class="pb-3 content-mb-0"><?php echo $bloc["texte"] ?></div>
-                                <?php endif; ?>
-
-                            </div>
-                        </div>
-
-                        <?php if ($bloc["lame_de_contenu"] && count($bloc["lame_de_contenu"]) > 0): ?>
-                            <?php foreach ($bloc["lame_de_contenu"] as $lame): ?>
-                                <div class="page__home--50--50 py-3 py-md-5">
-                                    <div class="container__lg">
-                                        <div
-                                            class="row align-items-center <?php echo ($lame["disposition"] != "gauche") ? "flex-md-row-reverse" : "" ?>">
-                                            <div class="col-md-6 pb-3 pb-md-0 d-flex justify-content-center">
-                                                <figure>
-                                                    <img src="<?php echo $lame["image"]["url"] ?>" width="100%" height="100%"
-                                                        alt="<?php echo $lame["image"]["alt"] ?>">
-                                                </figure>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <h2 class="text-<?php echo $lame["couleur_titre"] ?> mb-3"><?php echo $lame["titre"] ?></h2>
-
-                                                <?php if ($lame["contenu_texte"]): ?>
-                                                    <div class="content-text ul-<?php echo $lame["couleur_titre"] ?>">
-                                                        <?php echo $lame["contenu_texte"] ?>
-                                                    </div>
-                                                <?php endif; ?>
-                                            </div>
-                                        </div>
-
+                                        <?php endif; ?>
                                     </div>
                                 </div>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-
-
-                    </section>
+                            </div>
+                        </section>
                     <?php break; ?>
 
-                <?php case 'lame_etudes_cas': ?>
-                    <div class="">
-                        <?php echo get_template_part('template-parts/lame', 'etude-cas', ['bloc' => $bloc]) ?>
-                    </div>
-                    <?php break; ?>
+                    <?php case 'lame_texte_image': ?>
+                        <section class="lame_texte_image position-relative d-flex align-items-center justify-content-center overflow-hidden bg-white">
+                            <div class="w-100">
+                                <div class="container__lg text-center">
+                                    <?php if (!empty($bloc["titre_lame"])): ?>
+                                        <h3 class="title-big position-relative mb-4 f-56"><?php echo $bloc["titre_lame"] ?></h3>
+                                    <?php endif; ?>
+                                </div>
 
-                <?php case 'lame_temoignage_video': ?>
-                    <section
-                        class="single__etude--temoignage pb-3 py-4 py-md-5 position-relative d-flex align-items-center overflow-hidden">
-                        <div class="container__lg py-4 py-md-5">
-                            <div class="row align-items-center py-lg-4 py-xl-5">
-                                <div class="col-12 ">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div
-                                                class="single__etude--temoignage--left  p-4 p-lg-5 h-100 d-flex align-items-center justify-content-center">
-                                                <?php if ($bloc["photo"]): ?>
-                                                    <figure class="mb-0">
-                                                        <img src="<?php echo $bloc["photo"]['url'] ?>" class="img-fluid" />
-                                                    </figure>
-                                                <?php endif; ?>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div
-                                                class="single__etude--temoignage--right p-4 p-lg-5 h-100 d-flex flex-column justify-content-center">
-                                                <?php
-                                                $etude_fields = get_fields(get_the_ID());
-                                                if ($etude_fields["logo_client"]): ?>
-                                                    <div class="single__etude--temoignage--right--logo mb-3">
-                                                        <img src="<?php echo $etude_fields["logo_client"]["url"] ?>"
-                                                            alt="<?php echo $etude_fields["logo_client"]["alt"] ?>">
+                                <div class="container__sm text-center pb-4">
+                                    <?php if ($bloc["mention_dessous_titre"]): ?>
+                                        <div class="f-20 rustica content-text"><?php echo $bloc["mention_dessous_titre"] ?></div>
+                                    <?php endif; ?>
+                                </div>
+
+                                <div class="container__lg pt-0 pt-md-5">
+                                    <div class="row justify-content-center align-items-center">
+                                        <?php $cpt = 0 ?>
+                                        <?php foreach (is_array($bloc["lame_imagetexte"]) ? $bloc["lame_imagetexte"] : [] as $lame): ?>
+                                            <div class="col-md-4 d-flex mb-4">
+                                                <div class="lame_texte_image__card text-start bg-light-gray">
+                                                    <div class="lame_texte_image__card--inner p-4">
+                                                        <?php if ($lame["image"]): ?>
+                                                            <figure class="mb-4 text-center">
+                                                                <img src="<?php echo $lame["image"]["url"]; ?>" width="30" height="30" alt="<?php echo $lame["image"]["alt"]; ?>">
+                                                            </figure>
+                                                        <?php endif; ?>
+                                                        <h4 class="f-30 mb-3 text-center"><?php echo $lame["titre"]; ?></h4>
+                                                        <?php if ($lame["texte"]): ?>
+                                                            <div class="f-16 rustica content-text text-left"><?php echo $lame["texte"]; ?></div>
+                                                        <?php endif; ?>
                                                     </div>
-                                                <?php endif; ?>
+                                                </div>
+                                            </div>
+                                            <?php $cpt++ ?>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    <?php break; ?>
+
+                    <?php case 'lame_texte_image_complexe': ?>
+                        <section class="pb-3 py-4 py-md-5 position-relative overflow-hidden">
+
+                            <div class="page__home--methode--top pt-0 pt-md-4 position-relative text-center">
+                                <div class="container__lg pb-md-4">
+                                    <?php if ($bloc["etiquette"]): ?>
+                                        <h3 class="tag tag-purple my-3"><?php echo $bloc["etiquette"] ?></h3>
+                                    <?php endif; ?>
+
+                                    <?php if ($bloc["titre"]): ?>
+                                        <h2 class="pt-3 pb-4 "><?php echo $bloc["titre"] ?></h2>
+                                    <?php endif; ?>
+
+                                    <?php if ($bloc["texte"]): ?>
+                                        <div class="pb-3 content-mb-0"><?php echo $bloc["texte"] ?></div>
+                                    <?php endif; ?>
+
+                                </div>
+                            </div>
+
+                            <?php if ($bloc["lame_de_contenu"] && count($bloc["lame_de_contenu"]) > 0): ?>
+                                <?php foreach ($bloc["lame_de_contenu"] as $lame): ?>
+                                    <div class="page__home--50--50 py-3 py-md-5">
+                                        <div class="container__lg">
+                                            <div
+                                                class="row align-items-center <?php echo ($lame["disposition"] != "gauche") ? "flex-md-row-reverse" : "" ?>">
+                                                <div class="col-md-6 pb-3 pb-md-0 d-flex justify-content-center">
+                                                    <figure>
+                                                        <img src="<?php echo $lame["image"]["url"] ?>" width="100%" height="100%"
+                                                            alt="<?php echo $lame["image"]["alt"] ?>">
+                                                    </figure>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h2 class="text-<?php echo $lame["couleur_titre"] ?> mb-3"><?php echo $lame["titre"] ?></h2>
+
+                                                    <?php if ($lame["contenu_texte"]): ?>
+                                                        <div class="content-text ul-<?php echo $lame["couleur_titre"] ?>">
+                                                            <?php echo $lame["contenu_texte"] ?>
+                                                        </div>
+                                                    <?php endif; ?>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+
+
+                        </section>
+                    <?php break; ?>
+
+                    <?php case 'lame_etudes_cas': ?>
+                        <section class="bg-light-gray justify-content-cente">
+                            <?php echo get_template_part('template-parts/lame', 'etude-cas', ['bloc' => $bloc]) ?>
+                        </section>
+                    <?php break; ?>
+
+                    <?php case 'lame_temoignage_video': ?>
+                        <section class="single__etude--temoignage position-relative d-flex align-items-center overflow-hidden bg-dark-green">
+                            <div class="container__lg">
+                                <div class="row align-content-center">
+                                    <div class="col-md-6 single__etude--temoignage--left-container">
+                                        <div class="pe-2 single__etude--temoignage--left d-flex align-content-center justify-content-center">
+                                            <?php if ($bloc["photo"]): ?>
+                                                <figure class="mb-0">
+                                                    <img src="<?php echo $bloc["photo"]['url'] ?>" class="img-fluid" />
+                                                </figure>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 align-content-center">
+                                        <div class="ps-2 single__etude--temoignage--right d-flex flex-column  justify-content-between text-white">
+                                        <?php
+                                            $etude_fields = get_fields(get_the_ID());
+                                            if ($etude_fields["logo_client"]): ?>
+                                                <div class="mb-3 header-logo">
+                                                    <img src="<?php echo $etude_fields["logo_client"]["url"] ?>"
+                                                        alt="<?php echo $etude_fields["logo_client"]["alt"] ?>">
+                                                </div>
+                                            <?php endif; ?>
+                                            <div class="single__etude--temoignage--right--info">
                                                 <?php if ($bloc["nom_prenom"]): ?>
-                                                    <div class="single__etude--temoignage--right--nom f-18 termina_demi mb-1">
+                                                    <div class="single__etude--temoignage--right--nom mb-1">
                                                         <?php echo $bloc["nom_prenom"] ?>
                                                     </div>
                                                 <?php endif; ?>
                                                 <?php if ($bloc["fonction_entreprise"]): ?>
-                                                    <div
-                                                        class="single__etude--temoignage--right--fonction f-14 rustica text-secondary mb-3">
+                                                    <div class="single__etude--temoignage--right--fonction mb-3">
                                                         <?php echo $bloc["fonction_entreprise"] ?>
                                                     </div>
                                                 <?php endif; ?>
+                                            </div>
+                                            <div class="single__etude--temoignage--right--citation-container">
                                                 <?php if ($bloc["citation"]): ?>
-                                                    <div class="single__etude--temoignage--right--citation  f-14 rustica mb-0">
+                                                    <div class="f-20 single__etude--temoignage--right--citation mb-0">
                                                         <?php echo $bloc["citation"] ?>
                                                     </div>
                                                 <?php endif; ?>
@@ -279,10 +308,8 @@ get_header();
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </section>
+                        </section>
                     <?php break; ?>
-
             <?php endswitch ?>
         <?php endforeach; ?>
     </section>
