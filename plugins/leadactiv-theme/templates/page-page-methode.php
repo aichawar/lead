@@ -105,7 +105,7 @@ foreach (is_array($blocs["lames_contenu"]) ? $blocs["lames_contenu"] : [] as $bl
     <?php switch ($bloc['acf_fc_layout']):
         case 'lame_fonctionnement': ?>
             <section class="page__methode--fonctionnement my-5 pt-4 align-content-center" id="decouvrir">
-                <div class="container__lg>
+                <div class="container__lg">
                     <div class="page__methode--fonctionnement--top pt-3 my-4" id="section-header">
                         <div class="text-center mt-3">
                             <div id="section-title">
@@ -113,7 +113,7 @@ foreach (is_array($blocs["lames_contenu"]) ? $blocs["lames_contenu"] : [] as $bl
                                     <h3 class="tag"><?php echo $bloc["etiquette"] ?></h3>
                                 <?php endif; ?>
                                 <?php if ($bloc["grand_titre"]): ?>
-                                    <h2 class="py-2"><?php echo $bloc["grand_titre"] ?></h2>
+                                    <h2 class="py-2 mb-5"><?php echo $bloc["grand_titre"] ?></h2>
                                 <?php endif; ?>
                             </div>
                         </div>

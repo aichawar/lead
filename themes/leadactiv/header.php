@@ -53,7 +53,7 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <header>
-  <nav class="navbar navbar-expand-lg fixed-topi py-2 py-lg-3 
+  <nav class="navbar navbar-expand-lg fixed-top py-2 py-lg-3 
   <?php
   if (is_front_page()) {
       echo 'navbar-home';
@@ -67,7 +67,7 @@
       echo 'navbar-single';
   }
   ?>">
-      <div class="container-fluid mx-3">
+      <div class="container-fluid">
         <a class="navbar-brand" href="<?php echo home_url('/') ?>">
           <img class="w-100 logo
           <?php

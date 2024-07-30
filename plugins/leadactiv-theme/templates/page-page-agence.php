@@ -168,7 +168,7 @@ foreach (is_array($group_64b8fb3b67d5f) ? $group_64b8fb3b67d5f : [] as $field) {
                                     <button id="next" class="nav-arrow"></button>
                                 </div>
                             </div>
-                            <div class="page__agence--evolution--bas py-5 scroll-container justify-content-between align-items-stretch">
+                            <div class="page__agence--evolution--bas py-5 scroll-container ">
                                 <div class="cards-container-evolution px-4 position-relative">
                                     <?php $cpt = 0;
                                     foreach ($bloc["cartes"] as $carte): ?>

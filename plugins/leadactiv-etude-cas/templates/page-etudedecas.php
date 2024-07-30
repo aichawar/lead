@@ -7,10 +7,10 @@ get_header();
 ?>
 
 <main class="page__etude">
-<section class="page__etude--header position-relative py-1 my-md-2 mt-lg-3 bg-light-gray">
-        <div class="container__xl">
-            <div class="col-12 text-center f-48 pt-4">
-                <h2 class="big-title f-48 pt-3 text-darck-green"><?php _e('Nos études de cas') ?></h2>
+<section class="page__etude--header py-5 bg-light-gray">
+        <div class="container__lg">
+            <div class="col-12 text-center f-48 ">
+                <h2 class="big-title mb-5 f-48 pt-3 text-darck-green"><?php _e('Nos études de cas') ?></h2>
             </div>
             <div class="col-12">
                 <div id="carouselEtudesDeCas" class="carousel slide" data-bs-ride="carousel">
@@ -79,7 +79,7 @@ get_header();
         </div>
     </section>
 
-    <section class="page__etude--content position-relative pb-5 my-3" id="decouvrir">
+    <section class="page__etude--content position-relative " id="decouvrir">
         <div class="container__lg pt-4">
             <div class="col-md-12 mx-3">
                 <?php

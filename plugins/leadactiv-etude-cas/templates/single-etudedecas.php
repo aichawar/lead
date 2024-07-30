@@ -73,7 +73,7 @@ get_header();
             <?php switch ($bloc['acf_fc_layout']):
                 case 'lame_chiffres': ?>
                     <section class="page__etude--chiffres d-flex overflow-hidden justify-content-center">
-            <div class="page__etude--chiffres__left text-white d-flex flex-column py-5">
+            <div class="page__etude--chiffres__left text-white d-flex flex-column mt-3 py-5">
                 <div class="container__xl">
                     <?php if ($bloc['photo']): ?>
                         <img src="<?php echo $bloc['photo']['url']; ?>" alt="<?php echo $bloc['photo']['alt']; ?>" class="mb-4">

@@ -24,43 +24,42 @@ foreach (is_array($group_64b8fb2d1d0bc) ? $group_64b8fb2d1d0bc : [] as $field) {
 
 <main class="page__home ">
     <section class="page__home--header position-relative bg-dark-green d-flex align-items-center overflow-hidden">
-        <div class="container__xl">
-            <div class="row align-items-center py-5 pt-2 mx-5 h-100">
-                <div class="col-md-8">
-                    <?php if ($entete["mention_dessus_slogan"]): ?>
-                        <p class="tag text-white my-3"><?php echo $entete["mention_dessus_slogan"] ?></p>
-                    <?php endif; ?>
-                    <?php if ($entete["slogan"]): ?>
-                        <h1 class="title-big-home mb-3 position-relative text-white ">
-                            <?php echo $entete["slogan"] ?>
-                        </h1>
-                    <?php endif; ?>
-                    <?php if ($entete["mention_dessous_violette"] || $entete["mention_dessous_noire"]): ?>
-                        <p class="my-3 text-white">
-                            <?php if ($entete["mention_dessous_violette"]): ?>
-                                <span class="typedjs fw-medium"
-                                    data-phrase="<?php $cpt = 0;
-                                    foreach ($entete["mention_dessous_violette"] as $mention):
-                                        echo $mention["mention"];
-                                        echo ($cpt != count($entete["mention_dessous_violette"])) ? ';;' : ''; ?><?php $cpt++; endforeach; ?>"></span>
-                            <?php endif; ?>
-                            <?php if ($entete["mention_dessous_noire"]): ?>
-                                <?php echo $entete["mention_dessous_noire"]; ?>
-                            <?php endif; ?>
-                        </p>
-                    <?php endif; ?>
-                    <?php if ($entete["lien"]): ?>
-                        <a class="btn btn-purple-black" target="<?php echo $entete["lien"]["target"] ?>"
-                            href="<?php echo $entete["lien"]["url"] ?>"><?php echo $entete["lien"]["title"] ?></a>
-                    <?php endif; ?>
-                </div>
-                <div class="col-md-4 d-flex justify-content-end position-relative ">
-                    <img src=".\wp-content\uploads\2024\07\3-Fleche_violet.svg" alt="Image"
-                        class="img-fluid position-absolute bottom-right image__page--home">
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="container__lg">
+        <div class="row align-items-center py-4 pt-2 h-100">
+            <div class="col-md-8">
+                <?php if ($entete["mention_dessus_slogan"]): ?>
+                    <p class="tag text-white"><?php echo $entete["mention_dessus_slogan"] ?></p>
+                <?php endif; ?>
+                <?php if ($entete["slogan"]): ?>
+                    <h1 class="title-big-home mb-3 position-relative text-white ">
+                        <?php echo $entete["slogan"] ?>
+                    </h1>
+                <?php endif; ?>
+                <?php if ($entete["mention_dessous_violette"] || $entete["mention_dessous_noire"]): ?>
+                    <p class="my-3 text-white">
+                        <?php if ($entete["mention_dessous_violette"]): ?>
+                            <span class="typedjs fw-medium"
+                                data-phrase="<?php $cpt = 0;
+                                foreach ($entete["mention_dessous_violette"] as $mention):
+                                    echo $mention["mention"];
+                                    echo ($cpt != count($entete["mention_dessous_violette"])) ? ';;' : ''; ?><?php $cpt++; endforeach; ?>"></span>
+                        <?php endif; ?>
+                        <?php if ($entete["mention_dessous_noire"]): ?>
+                            <?php echo $entete["mention_dessous_noire"]; ?>
+                        <?php endif; ?>
+                    </p>
+                <?php endif; ?>
+                <?php if ($entete["lien"]): ?>
+                    <a class="btn btn-purple-black" target="<?php echo $entete["lien"]["target"] ?>"
+                        href="<?php echo $entete["lien"]["url"] ?>"><?php echo $entete["lien"]["title"] ?></a>
+                <?php endif; ?>
+            </div>    
+        </div>             
+    </div>
+    <img src=".\wp-content\uploads\2024\07\3-Fleche_violet.svg" alt="Image"
+    class="image__page--home">      
+</section>
+
 
     <?php
     $cpt = 0;
@@ -75,10 +74,10 @@ foreach (is_array($group_64b8fb2d1d0bc) ? $group_64b8fb2d1d0bc : [] as $field) {
             <?php case 'lame_methode': ?>
                 <section class="page__home--methode" id="decouvrir">
                     <div class="container__lg">
-                        <div class="row align-items-center">
-                            <div class="col-md-8">
+                        <div class="row align-items-center py-5">
+                            <div class="col-12 col-md-8">
                                 <?php if ($bloc["etiquette"]): ?>
-                                    <h3 class="tag text-method--page my-3 "><?php echo $bloc["etiquette"] ?></h3>
+                                    <h3 class="tag text-method--page"><?php echo $bloc["etiquette"] ?></h3>
                                 <?php endif; ?>
 
                                 <?php if ($bloc["titre"]): ?>
@@ -92,15 +91,14 @@ foreach (is_array($group_64b8fb2d1d0bc) ? $group_64b8fb2d1d0bc : [] as $field) {
                                         href="<?php echo $bloc["lien_methodes"]["url"] ?>"><?php echo $bloc["lien_methodes"]["title"] ?></a>
                                 <?php endif; ?>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-12 col-md-4">
                                 <div class="row g-4">
                                     <?php $cpt = 0 ?>
                                     <?php foreach (is_array($bloc["cartes"]) ? $bloc["cartes"] : [] as $carte): ?>
-                                        <div class="">
+                                        <div class="col-12">
                                             <div class="page__home--methode--bottom--carte carte-<?php echo $cpt % 2 ?> p-4">
                                                 <?php if ($carte["categories_cartes"]): ?>
-                                                    <h3
-                                                        class="tag f-14 mb-4 <?php echo strtolower(str_replace(' ', '-', $carte["categories_cartes"])); ?>">
+                                                    <h3 class="tag f-14 mb-4 <?php echo strtolower(str_replace(' ', '-', $carte["categories_cartes"])); ?>">
                                                         <?php echo $carte["categories_cartes"] ?>
                                                     </h3>
                                                 <?php endif; ?>
@@ -125,24 +123,23 @@ foreach (is_array($group_64b8fb2d1d0bc) ? $group_64b8fb2d1d0bc : [] as $field) {
             <?php case 'lame_50_image_50_texte': ?>
                 <section class="lame_50_image_50_texte">
                     <div class="container__lg"> 
-                        <div class="card-wrapper">                      
-                        <div class="card background-<?php echo $bloc["couleur_titre"] ?>">
-                            <div
-                                class="row align-items-top <?php echo ($bloc["disposition"] != "gauche") ? "flex-md-row-reverse" : "" ?>">
-                                <div class="col-md-6 px-5 text-container">
-                                    <h2 class="title_big f-36"><?php echo $bloc["titre"] ?></h2>
-                                    <?php if ($bloc["contenu_texte"]): ?>
-                                        <p class="f-18"><?php echo $bloc["contenu_texte"] ?></p>
-                                    <?php endif; ?>
-                                </div>
-                                <div class="col-md-6 d-flex ">
-                                    <figure class="">
-                                        <img src="<?php echo $bloc["image"]["url"] ?>" alt="<?php echo $bloc["image"]["alt"] ?>"
-                                            class="image-background">
-                                    </figure>
+                        <div class="card-wrapper row ">
+                            <div class="card no-hover background-<?php echo $bloc["couleur_titre"] ?>">
+                                <div class="row align-items-top <?php echo ($bloc["disposition"] != "gauche") ? "flex-md-row-reverse" : "" ?>">
+                                    <div class="col-md-6 col-sm-12 px-5 py-5 text-container flex-sm-column-reverse">
+                                        <h2 class="f-36 pt-2"><?php echo $bloc["titre"] ?></h2>
+                                        <?php if ($bloc["contenu_texte"]): ?>
+                                            <p class="f-18"><?php echo $bloc["contenu_texte"] ?></p>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 d-flex ">
+                                        <figure class="">
+                                            <img src="<?php echo $bloc["image"]["url"] ?>" alt="<?php echo $bloc["image"]["alt"] ?>"
+                                                class="image-background">
+                                        </figure>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                     </div>
                     
                 </section>
@@ -164,48 +161,45 @@ foreach (is_array($group_64b8fb2d1d0bc) ? $group_64b8fb2d1d0bc : [] as $field) {
                     <?php get_template_part('template-parts/lame', '3-cartes', $bloc) ?>
                 </section>
                 <?php break; ?>
-            <?php case 'lame_faq': ?>
-                <section class="container__lg">
-                    <div class="faq-section">
-                        <div class="row">
-                            <div class=" col-2 col-md-3 pe-5">
+                <?php case 'lame_faq': ?>
+                    <section class="container__lg justify-content-center">
+                        <div class="row py-5">
+                            <div class="col-lg-2 col-md-3 col-sm-12 text-center text-md-start ">
                                 <?php if ($bloc["etiquette"]): ?>
-                                    <h3 class="tag tag-big faq-tag my-2"><?php echo $bloc["etiquette"] ?></h3>
+                                    <h3 class="tag my-2"><?php echo $bloc["etiquette"] ?></h3>
                                 <?php endif; ?>
 
                                 <?php if ($bloc["titre"]): ?>
                                     <h2 class="faq-title pt-3 pb-4"><?php echo $bloc["titre"] ?></h2>
                                 <?php endif; ?>
                             </div>
-                            <div class="col-9 col-md-9 ps-5">
-                                <?php if (count($bloc["questions_frequemment_posees"]) > 1): ?>
-                                    <div class="accordion my-4" id="accordionFaq">
-                                        <?php $cpt = 0 ?>
-                                        <?php foreach (is_array($bloc["questions_frequemment_posees"]) ? $bloc["questions_frequemment_posees"] : [] as $question): ?>
-                                            <div class="accordion-item py-2">
-                                                <p class="accordion-header f-20" id="heading-<?php echo $cpt ?>">
-                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                        data-bs-target="#collapse-<?php echo $cpt ?>" aria-expanded="true"
-                                                        aria-controls="collapse-<?php echo $cpt ?>">
-                                                        <?php echo $question["question"] ?>
-                                                    </button>
-                                                </p>
-                                                <div id="collapse-<?php echo $cpt ?>" class="accordion-collapse collapse"
-                                                    aria-labelledby="heading-<?php echo $cpt ?>" data-bs-parent="#accordionFaq">
-                                                    <div class="accordion-body">
-                                                        <?php echo $question["reponse"] ?>
-                                                    </div>
+                            <div class="col-lg-9 col-md-9 col-sm-12 d-flex justify-content-lg-end justify-content-md-end justify-content-center">
+                                <div class="accordion my-4 w-100 accordion-gap" id="accordionFaq">
+                                    <?php $cpt = 0 ?>
+                                    <?php foreach (is_array($bloc["questions_frequemment_posees"]) ? $bloc["questions_frequemment_posees"] : [] as $question): ?>
+                                        <div class="accordion-item py-2">
+                                            <p class="accordion-header f-20" id="heading-<?php echo $cpt ?>">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapse-<?php echo $cpt ?>" aria-expanded="true"
+                                                    aria-controls="collapse-<?php echo $cpt ?>">
+                                                    <?php echo $question["question"] ?>
+                                                </button>
+                                            </p>
+                                            <div id="collapse-<?php echo $cpt ?>" class="accordion-collapse collapse"
+                                                aria-labelledby="heading-<?php echo $cpt ?>" data-bs-parent="#accordionFaq">
+                                                <div class="accordion-body">
+                                                    <?php echo $question["reponse"] ?>
                                                 </div>
                                             </div>
-                                            <?php $cpt++ ?>
-                                        <?php endforeach; ?>
-                                    </div>
-                                <?php endif; ?>
+                                        </div>
+                                        <?php $cpt++ ?>
+                                    <?php endforeach; ?>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-                <?php break; ?>
+                    </section>
+
+                    <?php break; ?>
         <?php endswitch; ?>
     <?php endforeach; ?>
     <div class="cta-section">
